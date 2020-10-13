@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>억경 계산기</title>
+    <script src="./node_modules/moment/moment.js"></script>
+  </head>
+  <body>
+    <h1>억경 계산기</h1>
+    <br>
+    <span id="clock"></span>
+    <br>
+    <br>
+    시작 경험치 : <span id="start">0 / 0.0%</span>
+    <br>
+    시작 시간 : <span id="startTime"></span>
+    <br>
+    <br>
+    현재 억경 : <input type="text" id="exp1">
+    <br>
+    현재 경험치 : <input type="text" id="exp2">
+    <button id="submit">시작</button>
+
+    <h2> 시간당 : </h2> <span id="result"></span>
+    <br>
+    <h2> 총 경험치 / 시간 : </h2> <span id="resultExp"></span>
+
+    <!-- You can also require other files to run in this process -->
+  </body>
+  <script src="./renderer.js"></script>
+</html>
