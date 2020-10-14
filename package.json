@@ -1,10 +1,12 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-quick-start-typescript",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "description": "A minimal Electron application written with Typescript",
   "scripts": {
-    "start": "electron .",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint -c .eslintrc --ext .ts ./src",
+    "start": "npm run build && electron ./dist/main.js",
     "build:osx": "electron-builder --mac",
     "build:linux": "npm run build:linux32 && npm run build:linux64",
     "build:linux32": "electron-builder --linux --ia32",
@@ -13,19 +15,23 @@
     "build:win32": "electron-builder --win portable --ia32",
     "build:win64": "electron-builder --win portable --x64"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/electron/electron-quick-start-typescript",
   "keywords": [
     "Electron",
     "quick",
     "start",
     "tutorial",
-    "demo"
+    "demo",
+    "typescript"
   ],
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^9.2.1",
-    "electron-builder": "^22.8.1"
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "eslint": "^7.3.1",
+    "electron": "^9.3.0",
+    "typescript": "^3.9.5"
   },
   "dependencies": {
     "moment": "^2.29.1"
